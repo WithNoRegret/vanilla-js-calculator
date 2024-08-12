@@ -1,7 +1,6 @@
 export default class Calculator {
     constructor() {
         this.values = [0, 0]
-        this.result = 0;
         this.activeValue = 0;
 
         this.operation = '';
@@ -13,5 +12,12 @@ export default class Calculator {
 
     setOperation(operation) {
         this.operation = operation;
+    }
+
+    clearCalculator() {
+        this.values = [0, 0]
+        this.activeValue = 0;
+
+        this.operation = '';
     }
 }

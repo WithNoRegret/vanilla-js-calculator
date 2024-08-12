@@ -17,6 +17,7 @@ const initCalc = () => {
     const buttonSubtract = document.querySelector('#button-subtract');
     const buttonMultiply = document.querySelector('#button-multiply');
     const buttonDivide = document.querySelector('#button-divide');
+    const buttonEqual = document.querySelector('#button-equal');
 
     const calculator = new Calculator();
     result.textContent = 0;
@@ -103,6 +104,31 @@ const initCalc = () => {
         }
     });
 
+    buttonEqual.addEventListener('click', () => {
+        if(calculator.values[1] !== 0) {
+            let equalResult;
+            switch (calculator.operation) {
+                case 'add':
+                    equalResult = calculator.values[0] + calculator.values[1];
+                    break;
+                case 'multiply':
+                    equalResult = calculator.values[0] * calculator.values[1];
+                    break;
+                case 'subtract':
+                    equalResult = calculator.values[0] - calculator.values[1];
+                    break;
+                case 'divide':
+                    equalResult = calculator.values[0] / calculator.values[1];
+                    break;
+            }
+            if (equalResult > 99999999999999) {
+                result.textContent = 'Error, number is too long!';
+            } else {
+                result.textContent = equalResult.toFixed(15 - equalResult.toString().split('.')[0]);
+            }
+            calculator.clearCalculator();
+        }
+    })
 
 };
 
