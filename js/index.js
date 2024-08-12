@@ -14,46 +14,56 @@ const initCalc = () => {
     const button0 = document.querySelector('#button-0');
 
     const calculator = new Calculator();
-    result.textContent = calculator.firstValue;
+    result.textContent = 0;
     
     button1.addEventListener('click', () => {
         calculator.updateValue(1);
+        result.textContent = calculator.values[calculator.activeValue];
     });
 
     button2.addEventListener('click', () => {
         calculator.updateValue(2);
+        result.textContent = calculator.values[calculator.activeValue];
     });
 
     button3.addEventListener('click', () => {
         calculator.updateValue(3);
+        result.textContent = calculator.values[calculator.activeValue];
     });
 
     button4.addEventListener('click', () => {
         calculator.updateValue(4);
+        result.textContent = calculator.values[calculator.activeValue];
     });
 
     button5.addEventListener('click', () => {
         calculator.updateValue(5);
+        result.textContent = calculator.values[calculator.activeValue];
     });
 
     button6.addEventListener('click', () => {
         calculator.updateValue(6);
+        result.textContent = calculator.values[calculator.activeValue];
     });
 
     button7.addEventListener('click', () => {
         calculator.updateValue(7);
+        result.textContent = calculator.values[calculator.activeValue];
     });
 
     button8.addEventListener('click', () => {
         calculator.updateValue(8);
+        result.textContent = calculator.values[calculator.activeValue];
     });
 
     button9.addEventListener('click', () => {
         calculator.updateValue(9);
+        result.textContent = calculator.values[calculator.activeValue];
     });
 
     button0.addEventListener('click', () => {
         calculator.updateValue(0);
+        result.textContent = calculator.values[calculator.activeValue];
     });
 };
 
