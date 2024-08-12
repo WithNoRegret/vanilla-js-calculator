@@ -27,6 +27,13 @@
     gap: 20px;
 }
 
+.calculator__display-operation {
+    padding: 10px;
+    border: 2px solid #ffffff;
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
+
 .calculator__buttons {
     display: grid;
     grid-template-columns: 8fr 8fr 8fr 5fr 5fr;
@@ -46,6 +53,10 @@
         padding: 25px;
         border-radius: var(--mobile-display-border-radius);
         gap: 10px;
+    }
+
+    .calculator__display-operation {
+        padding: 5px;
     }
 
     .calculator__buttons {
