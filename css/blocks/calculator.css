@@ -29,7 +29,7 @@
 
 .calculator__display-operation {
     padding: 10px;
-    height: 50px;
+    height: 90px;
     aspect-ratio: 1;
     border: 2px solid #ffffff;
     border-radius: 50%;
@@ -62,6 +62,7 @@
 
     .calculator__display-operation {
         padding: 5px;
+        height: 45px;
     }
 
     .calculator__buttons {
