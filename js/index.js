@@ -126,6 +126,7 @@ const initCalc = () => {
             } else {
                 result.textContent = Number(equalResult.toFixed(15 - equalResult.toString().split('.')[0].length));
             }
+            operation.textContent = ' ';
             calculator.clearCalculator();
         }
     })
