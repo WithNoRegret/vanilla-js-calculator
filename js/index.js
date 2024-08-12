@@ -2,6 +2,7 @@ import Calculator from "./calculator.js";
 
 const initCalc = () => {
     const result = document.querySelector('#result');
+    const operation = document.querySelector('#operation');
     const button1 = document.querySelector('#button-1');
     const button2 = document.querySelector('#button-2');
     const button3 = document.querySelector('#button-3');
@@ -12,6 +13,10 @@ const initCalc = () => {
     const button8 = document.querySelector('#button-8');
     const button9 = document.querySelector('#button-9');
     const button0 = document.querySelector('#button-0');
+    const buttonAdd = document.querySelector('#button-add');
+    const buttonSubtract = document.querySelector('#button-subtract');
+    const buttonMultiply = document.querySelector('#button-multiply');
+    const buttonDivide = document.querySelector('#button-divide');
 
     const calculator = new Calculator();
     result.textContent = 0;
@@ -65,6 +70,40 @@ const initCalc = () => {
         calculator.updateValue(0);
         result.textContent = calculator.values[calculator.activeValue];
     });
+
+    buttonAdd.addEventListener('click', () => {
+        if (calculator.values[1] === 0) {
+            calculator.setOperation('add');
+            operation.textContent('+');
+            calculator.activeValue = 1;
+        }
+    });
+
+    buttonMultiply.addEventListener('click', () => {
+        if (calculator.values[1] === 0) {
+            calculator.setOperation('multiply');
+            operation.textContent('×');
+            calculator.activeValue = 1;
+        }
+    });
+
+    buttonSubtract.addEventListener('click', () => {
+        if (calculator.values[1] === 0) {
+            calculator.setOperation('subtract');
+            operation.textContent('-');
+            calculator.activeValue = 1;
+        }
+    });
+
+    buttonDivide.addEventListener('click', () => {
+        if (calculator.values[1] === 0) {
+            calculator.setOperation('divide');
+            operation.textContent('÷');
+            calculator.activeValue = 1;
+        }
+    });
+
+
 };
 
 initCalc();

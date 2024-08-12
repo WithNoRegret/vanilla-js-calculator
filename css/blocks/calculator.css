@@ -24,6 +24,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    gap: 20px;
 }
 
 .calculator__buttons {
@@ -44,6 +45,7 @@
         height: 70px;
         padding: 25px;
         border-radius: var(--mobile-display-border-radius);
+        gap: 10px;
     }
 
     .calculator__buttons {
