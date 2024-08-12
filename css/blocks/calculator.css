@@ -29,13 +29,10 @@
 
 .calculator__display-operation {
     padding: 10px;
-    border: 2px solid #ffffff;
+    height: 50px;
     aspect-ratio: 1;
+    border: 2px solid #ffffff;
     border-radius: 50%;
-
-    &:empty {
-        display: none;
-    }
 }
 
 .calculator__buttons {
