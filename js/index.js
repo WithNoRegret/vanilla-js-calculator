@@ -74,8 +74,7 @@ const initCalc = () => {
     buttonAdd.addEventListener('click', () => {
         if (calculator.values[1] === 0) {
             calculator.setOperation('add');
-            console.log(operation);
-            operation.textContent('+');
+            operation.textContent = '+';
             calculator.activeValue = 1;
         }
     });
@@ -83,8 +82,7 @@ const initCalc = () => {
     buttonMultiply.addEventListener('click', () => {
         if (calculator.values[1] === 0) {
             calculator.setOperation('multiply');
-            console.log(operation);
-            operation.textContent('×');
+            operation.textContent = '×';
             calculator.activeValue = 1;
         }
     });
@@ -92,8 +90,7 @@ const initCalc = () => {
     buttonSubtract.addEventListener('click', () => {
         if (calculator.values[1] === 0) {
             calculator.setOperation('subtract');
-            console.log(operation);
-            operation.textContent('-');
+            operation.textContent = '-';
             calculator.activeValue = 1;
         }
     });
@@ -101,8 +98,7 @@ const initCalc = () => {
     buttonDivide.addEventListener('click', () => {
         if (calculator.values[1] === 0) {
             calculator.setOperation('divide');
-            console.log(operation);
-            operation.textContent('÷');
+            operation.textContent = '÷';
             calculator.activeValue = 1;
         }
     });
