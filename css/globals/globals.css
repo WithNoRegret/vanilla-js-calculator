@@ -1,9 +1,15 @@
 body {
     min-height: 100vh;
-    background-color: #1E1E1E;
+    background-color: var(--background-color);
 
     font-family: var(--font-family);
     font-weight: 400;
     font-size: 48px;
     color: #ffffff;
+}
+
+@media (max-width: 1000px) {
+    body {
+        font-size: 24px;
+    }
 }
