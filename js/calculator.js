@@ -1,6 +1,6 @@
 export default class Calculator {
     constructor() {
-        this.values[0, 0]
+        this.values = [0, 0]
         this.result = 0;
         this.activeValue = 0;
     }
