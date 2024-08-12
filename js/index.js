@@ -124,7 +124,7 @@ const initCalc = () => {
             if (equalResult > 99999999999999) {
                 result.textContent = 'Error, number is too long!';
             } else {
-                result.textContent = equalResult.toFixed(15 - equalResult.toString().split('.')[0].length);
+                equalResult = Number(equalResult.toFixed(15 - equalResult.toString().split('.')[0].length));
             }
             calculator.clearCalculator();
         }
