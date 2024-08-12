@@ -32,6 +32,10 @@
     border: 2px solid #ffffff;
     aspect-ratio: 1;
     border-radius: 50%;
+
+    &:empty {
+        display: none;
+    }
 }
 
 .calculator__buttons {
