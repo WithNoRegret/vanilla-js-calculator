@@ -17,6 +17,7 @@
   "devDependencies": {
     "stylelint": "^16.8.1",
     "stylelint-config-clean-order": "^6.1.0",
-    "stylelint-config-standard": "^36.0.1"
+    "stylelint-config-standard": "^36.0.1",
+    "stylelint-config-two-dash-bem": "^1.0.0"
   }
 }
