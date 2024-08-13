@@ -1,10 +1,12 @@
 body {
   min-height: 100vh;
-  background-color: var(--background-color);
+
   font-family: var(--font-family);
-  font-weight: 400;
   font-size: 48px;
+  font-weight: 400;
   color: #ffffff;
+
+  background-color: var(--background-color);
 }
 
 @media (width <= 1000px) {
