@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz@0,14..32;1,14..32&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz@0,14..32;1,14..32&display=swap');
 
 :root {
   /* colors */
@@ -10,7 +10,7 @@
   --button-equal-color: #b2b2b2;
 
   /* fonts */
-  --font-family: "Inter", sans-serif;
+  --font-family: 'Inter', sans-serif;
 
   /* border radius */
   --display-border-radius: 40px;

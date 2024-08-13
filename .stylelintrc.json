@@ -1,10 +1,10 @@
-{ 
-    "extends": [
-        "stylelint-config-standard",
-        "stylelint-config-clean-order",
-        "stylelint-config-two-dash-bem"
-    ],
-    "rules": {
-        "color-hex-length": "long"
-    }
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-clean-order",
+    "stylelint-config-two-dash-bem"
+  ],
+  "rules": {
+    "color-hex-length": "long"
+  }
 }

@@ -3,13 +3,12 @@ export default class Calculator {
     this.values = [0, 0];
     this.activeValue = 0;
 
-    this.operation = "";
+    this.operation = '';
   }
 
   updateValue(newValue) {
     if (this.values[this.activeValue].toString().length < 15) {
-      this.values[this.activeValue] =
-        this.values[this.activeValue] * 10 + newValue;
+      this.values[this.activeValue] = this.values[this.activeValue] * 10 + newValue;
     }
   }
 
@@ -21,6 +20,6 @@ export default class Calculator {
     this.values = [0, 0];
     this.activeValue = 0;
 
-    this.operation = "";
+    this.operation = '';
   }
 }
