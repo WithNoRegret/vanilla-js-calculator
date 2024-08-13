@@ -27,6 +27,9 @@
   height: 140px;
   padding: 50px;
 
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+
   background-color: var(--display-color);
   border-radius: var(--display-border-radius);
 }
