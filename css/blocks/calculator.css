@@ -19,9 +19,7 @@
   height: 140px;
   background-color: var(--display-color);
   border-radius: var(--display-border-radius);
-
   padding: 50px;
-
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -32,9 +30,8 @@
   padding: 10px;
   height: 90px;
   aspect-ratio: 1;
-  border: 2px solid #ffffff;
+  border: var(--display-operation-border);
   border-radius: 50%;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -46,7 +43,7 @@
   gap: 20px;
 }
 
-@media (max-width: 1000px) {
+@media (width <= 1000px) {
   .calculator {
     width: 400px;
     height: 367px;
@@ -71,7 +68,7 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (width <= 500px) {
   .calculator {
     height: 340px;
     padding: 20px;

@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz@0,14..32;1,14..32&display=swap");
 
 :root {
-  /*colors */
+  /* colors */
   --background-color: #1e1e1e;
   --calculator-color: #242530;
   --display-color: #3a3f77;
@@ -18,7 +18,10 @@
   --button-border-radius: 70px;
   --mobile-button-border-radius: 35px;
 
+  /* borders */
+  --display-operation-border: 2px solid #ffffff;
+
   /* shadows */
-  --button-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.25);
-  --mobile-button-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  --button-shadow: 0 8px 8px 0 rgb(0 0 0 / 25%);
+  --mobile-button-shadow: 0 4px 4px 0 rgb(0 0 0 / 25%);
 }

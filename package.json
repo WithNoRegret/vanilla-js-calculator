@@ -5,12 +5,17 @@
   "type": "module",
   "main": "index.html",
   "scripts": {
-    "start": "serve"
+    "start": "serve",
+    "lint:styles": "npx stylelint '**/*.css'"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "serve": "^14.2.3"
+  },
+  "devDependencies": {
+    "stylelint": "^16.8.1",
+    "stylelint-config-standard": "^36.0.1"
   }
 }

@@ -17,10 +17,8 @@
   box-shadow: var(--button-shadow);
   background-color: var(--button-color);
   border-radius: var(--button-border-radius);
-
   width: 100%;
   height: 100%;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -39,7 +37,6 @@
 
 .button__inner--operations {
   background-color: var(--button-operations-color);
-
   aspect-ratio: 1;
 }
 
@@ -48,7 +45,7 @@
   background-color: var(--button-equal-color);
 }
 
-@media (max-width: 1000px) {
+@media (width <= 1000px) {
   .button {
     height: 55px;
     padding: 5px;
@@ -68,7 +65,7 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (width <= 500px) {
   .button {
     height: 45px;
     padding: 2px;
