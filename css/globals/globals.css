@@ -1,15 +1,21 @@
 body {
-    min-height: 100vh;
-    background-color: var(--background-color);
+  min-height: 100vh;
+  background-color: var(--background-color);
 
-    font-family: var(--font-family);
-    font-weight: 400;
-    font-size: 48px;
-    color: #ffffff;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 48px;
+  color: #ffffff;
 }
 
 @media (max-width: 1000px) {
-    body {
-        font-size: 24px;
-    }
+  body {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 500px) {
+  body {
+    font-size: 22px;
+  }
 }
