@@ -8,5 +8,8 @@ module.exports = {
     'plugin:eslint-comments/recommended',
     'plugin:promise/recommended',
     'plugin:prettier/recommended'
-  ]
+  ],
+  rules: {
+    'import/extensions': 'off'
+  }
 };

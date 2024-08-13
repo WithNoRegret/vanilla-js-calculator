@@ -1,4 +1,4 @@
-import Calculator from './calculator';
+import Calculator from './calculator.js';
 
 const initCalc = () => {
   const result = document.querySelector('#result');
