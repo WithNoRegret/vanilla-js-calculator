@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: center;
 
-  height: 110px;
+  max-height: 100%;
   padding: 10px;
 
   -webkit-tap-highlight-color: transparent;
@@ -50,7 +50,6 @@
 
 @media (width <= 1000px) {
   .button {
-    height: 55px;
     padding: 5px;
   }
 
@@ -70,7 +69,6 @@
 
 @media (width <= 500px) {
   .button {
-    height: 45px;
     padding: 2px;
   }
 

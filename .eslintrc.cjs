@@ -10,6 +10,7 @@ module.exports = {
     'plugin:prettier/recommended'
   ],
   rules: {
-    'import/extensions': 'off'
+    'import/extensions': 'off',
+    'prefer-destructuring': 'off'
   }
 };

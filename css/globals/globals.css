@@ -1,5 +1,6 @@
 body {
   min-height: 100vh;
+  padding-top: 50px;
 
   font-family: var(--font-family);
   font-size: 48px;
