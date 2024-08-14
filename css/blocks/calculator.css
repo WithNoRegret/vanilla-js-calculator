@@ -59,6 +59,10 @@
   border-radius: 50%;
 }
 
+.calculator__display-operation:empty {
+  border-color: transparent;
+}
+
 .calculator__buttons {
   display: grid;
   grid-template-columns: 8fr 8fr 8fr 5fr 5fr;
