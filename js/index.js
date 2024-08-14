@@ -161,7 +161,7 @@ const initCalc = () => {
       default:
         break;
     }
-    if (equalResult.toString().length > 15) {
+    if (Math.abs(equalResult) > 999999999999999) {
       // long number exeption
       result.textContent = '';
       info.textContent = 'Calculator - Number is too long!';
