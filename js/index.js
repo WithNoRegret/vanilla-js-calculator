@@ -98,16 +98,13 @@ const initCalc = () => {
       calculator.setOperation('subtract');
       operation.textContent = '-';
       calculator.activeValue = 1;
-    } else {
+    } else if (calculator.values[calculator.activeValue] === 0) {
       // negatie numbers
-      console.log(calculator.values[calculator.activeValue]);
-      if (calculator.values[calculator.activeValue] === 0) {
-        result.textContent = '-' + result.textContent;
-        calculator.activeValuePositive = false;
-      } else {
-        calculator.values[calculator.activeValue] *= -1;
-        result.textContent = calculator.values[calculator.activeValue];
-      }
+      result.textContent = `-${result.textContent}`;
+      calculator.activeValuePositive = false;
+    } else {
+      calculator.values[calculator.activeValue] *= -1;
+      result.textContent = calculator.values[calculator.activeValue];
     }
   });
 
@@ -171,9 +168,9 @@ const initCalc = () => {
       operation.textContent = '';
       calculator.clearCalculator();
       return;
-    } else {
-      result.textContent = Number(equalResult.toPrecision(15));
     }
+    result.textContent = Number(equalResult.toPrecision(15));
+
     operation.textContent = '';
     calculator.clearCalculator(Number(equalResult.toPrecision(15)));
   });

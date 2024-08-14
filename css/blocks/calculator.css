@@ -9,11 +9,12 @@
   width: 800px;
   max-width: 90vw;
   height: 734px;
-  padding: 50px;
   margin: auto;
+  padding: 50px;
 
   background-color: var(--calculator-color);
 }
+
 .calculator__info {
   position: absolute;
   top: 0;
@@ -21,10 +22,10 @@
 
   padding: 4px;
 
+  font-size: 0.4em;
+
   background-color: var(--calculator-color);
   border-radius: var(--display-border-radius);
-
-  font-size: 0.4em;
 }
 
 .calculator__display {
@@ -74,11 +75,13 @@
 
   .calculator__display {
     gap: 10px;
+
     height: 70px;
     padding: 25px;
-    border-radius: var(--mobile-display-border-radius);
 
     font-size: 22px;
+
+    border-radius: var(--mobile-display-border-radius);
   }
 
   .calculator__display-operation {

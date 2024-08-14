@@ -13,11 +13,11 @@ export default class Calculator {
       if (this.activeValueInteger === false && Number.isInteger(this.values[this.activeValue])) {
         // non integer exeption
         this.values[this.activeValue] = Number(
-          this.values[this.activeValue].toString() + '.' + newValue
+          `${this.values[this.activeValue].toString()}.${newValue}`
         );
       } else if (this.activeValuePositive === false && this.values[this.activeValue] === 0) {
         // non positive exeption
-        this.values[this.activeValue] = Number('-' + newValue);
+        this.values[this.activeValue] = Number(`-${newValue}`);
       } else {
         this.values[this.activeValue] = Number(this.values[this.activeValue].toString() + newValue);
       }
