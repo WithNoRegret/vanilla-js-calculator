@@ -1,0 +1,2 @@
+ fix bug with 0 after comma and minus
+ like 0.00001 and -0 => -0
