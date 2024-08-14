@@ -73,6 +73,11 @@ const initCalc = () => {
   });
 
   button0.addEventListener('click', () => {
+    if (!calculator.activeValueInteger & (result.textContent.length < 15)) {
+      calculator.trailingZeroes++;
+      result.textContent += '0';
+      return;
+    }
     calculator.updateValue(0);
     result.textContent = calculator.values[calculator.activeValue];
   });

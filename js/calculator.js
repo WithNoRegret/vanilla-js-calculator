@@ -4,6 +4,7 @@ export default class Calculator {
     this.activeValue = 0;
     this.activeValueInteger = true;
     this.activeValuePositive = true;
+    this.trailingZeroes = 0;
 
     this.operation = '';
   }
