@@ -2,6 +2,7 @@ import Calculator from './calculator.js';
 
 const initCalc = () => {
   const result = document.querySelector('#result');
+  const info = document.querySelector('#info');
   const operation = document.querySelector('#operation');
   const button1 = document.querySelector('#button-1');
   const button2 = document.querySelector('#button-2');
@@ -17,7 +18,11 @@ const initCalc = () => {
   const buttonSubtract = document.querySelector('#button-subtract');
   const buttonMultiply = document.querySelector('#button-multiply');
   const buttonDivide = document.querySelector('#button-divide');
+  const buttonExponent = document.querySelector('#button-exponent');
   const buttonEqual = document.querySelector('#button-equal');
+  const buttonBack = document.querySelector('#button-back');
+  const buttonComma = document.querySelector('#button-comma');
+  const buttonClear = document.querySelector('#button-clear');
 
   const calculator = new Calculator();
   result.textContent = 0;
@@ -89,10 +94,20 @@ const initCalc = () => {
   });
 
   buttonSubtract.addEventListener('click', () => {
-    if (calculator.values[1] === 0) {
+    if (calculator.values[1] === 0 && calculator.values[0] !== 0) {
       calculator.setOperation('subtract');
       operation.textContent = '-';
       calculator.activeValue = 1;
+    } else {
+      // negatie numbers
+      console.log(calculator.values[calculator.activeValue]);
+      if (calculator.values[calculator.activeValue] === 0) {
+        result.textContent = '-' + result.textContent;
+        calculator.activeValuePositive = false;
+      } else {
+        calculator.values[calculator.activeValue] *= -1;
+        result.textContent = calculator.values[calculator.activeValue];
+      }
     }
   });
 
@@ -104,35 +119,104 @@ const initCalc = () => {
     }
   });
 
-  buttonEqual.addEventListener('click', () => {
-    if (calculator.values[1] !== 0) {
-      let equalResult;
-      switch (calculator.operation) {
-        case 'add':
-          equalResult = calculator.values[0] + calculator.values[1];
-          break;
-        case 'multiply':
-          equalResult = calculator.values[0] * calculator.values[1];
-          break;
-        case 'subtract':
-          equalResult = calculator.values[0] - calculator.values[1];
-          break;
-        case 'divide':
-          equalResult = calculator.values[0] / calculator.values[1];
-          break;
-        default:
-          break;
-      }
-      if (equalResult > 99999999999999) {
-        result.textContent = 'Number is too long!';
-      } else {
-        result.textContent = Number(
-          equalResult.toFixed(15 - equalResult.toString().split('.')[0].length)
-        );
-      }
-      operation.textContent = ' ';
-      calculator.clearCalculator();
+  buttonExponent.addEventListener('click', () => {
+    if (calculator.values[1] === 0) {
+      calculator.setOperation('exponent');
+      operation.textContent = '^';
+      calculator.activeValue = 1;
     }
+  });
+
+  buttonEqual.addEventListener('click', () => {
+    let equalResult;
+    switch (calculator.operation) {
+      case 'add':
+        equalResult = calculator.values[0] + calculator.values[1];
+        break;
+      case 'multiply':
+        equalResult = calculator.values[0] * calculator.values[1];
+        break;
+      case 'subtract':
+        equalResult = calculator.values[0] - calculator.values[1];
+        break;
+      case 'divide':
+        if (calculator.values[1] === 0) {
+          // zero division exeption
+          result.textContent = '';
+          info.textContent = 'Calculator - Zero division error!';
+          operation.textContent = '';
+          calculator.clearCalculator();
+          break;
+        }
+        equalResult = calculator.values[0] / calculator.values[1];
+        break;
+      case 'exponent':
+        if (calculator.values[0] < 0 && !Number.isInteger(calculator.values[1])) {
+          // wrong exponent exeption
+          result.textContent = '';
+          info.textContent = 'Calculator - Wrong exponent error!';
+          operation.textContent = '';
+          calculator.clearCalculator();
+          break;
+        }
+        equalResult = calculator.values[0] ** calculator.values[1];
+        break;
+      default:
+        break;
+    }
+    if (equalResult.toString().length > 15) {
+      // long number exeption
+      result.textContent = '';
+      info.textContent = 'Calculator - Number is too long!';
+      operation.textContent = '';
+      calculator.clearCalculator();
+      return;
+    } else {
+      result.textContent = Number(equalResult.toPrecision(15));
+    }
+    operation.textContent = '';
+    calculator.clearCalculator(Number(equalResult.toPrecision(15)));
+  });
+
+  buttonBack.addEventListener('click', () => {
+    if (
+      Number.isInteger(calculator.values[calculator.activeValue]) &&
+      calculator.activeValueInteger === false
+    ) {
+      // corner case for erasing comma
+      calculator.activeValueInteger = true;
+      result.textContent = calculator.values[calculator.activeValue];
+    }
+    if (calculator.values[1] !== 0) {
+      // erasing second number
+      calculator.values[1] = Math.floor(calculator.values[1] / 10);
+      result.textContent = calculator.values[1];
+    } else if (calculator.operation !== '') {
+      // erasing operation
+      calculator.setOperation('');
+      operation.textContent = '';
+      calculator.activeValue = 0;
+      result.textContent = calculator.values[0];
+      calculator.activeValueInteger = Number.isInteger(calculator.values[0]);
+      calculator.activeValuePositive = calculator.values[0] > 0;
+    } else if (calculator.values[0] !== 0) {
+      // erasing first number
+      calculator.values[0] = Math.floor(calculator.values[0] / 10);
+      result.textContent = calculator.values[0];
+    }
+  });
+
+  buttonComma.addEventListener('click', () => {
+    if (calculator.activeValueInteger === true) {
+      calculator.activeValueInteger = false;
+      result.textContent += '.';
+    }
+  });
+
+  buttonClear.addEventListener('click', () => {
+    calculator.clearCalculator();
+    result.textContent = 0;
+    operation.textContent = '';
   });
 };
 

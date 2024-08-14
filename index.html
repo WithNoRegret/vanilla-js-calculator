@@ -8,6 +8,7 @@
   </head>
   <body>
     <div class="calculator" id="app">
+      <span class="calculator__info" id="info">Calculator</span>
       <div class="calculator__display">
         <span id="result"></span>
         <span class="calculator__display-operation" id="operation"> </span>
@@ -53,20 +54,25 @@
           <div class="button__inner" id="button-9">9</div>
         </div>
         <div class="button">
-          <div class="button__inner button__inner--operations">%</div>
+          <div class="button__inner button__inner--operations" id="button-clear">C</div>
         </div>
         <div class="button">
-          <div class="button__inner button__inner--operations">^</div>
+          <div class="button__inner button__inner--operations" id="button-exponent">^</div>
         </div>
         <div class="button">
-          <div class="button__inner">.</div>
+          <div class="button__inner" id="button-comma">.</div>
         </div>
         <div class="button">
           <div class="button__inner" id="button-0">0</div>
         </div>
         <div class="button">
           <div class="button__inner">
-            <img src="./assets/images/back-button.svg" alt="back" class="button__back" />
+            <img
+              src="./assets/images/back-button.svg"
+              alt="back"
+              class="button__back"
+              id="button-back"
+            />
           </div>
         </div>
         <div class="button button--equal" id="button-equal">

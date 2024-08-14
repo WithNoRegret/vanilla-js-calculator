@@ -1,4 +1,6 @@
 .calculator {
+  position: relative;
+
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -11,6 +13,16 @@
   margin: auto;
 
   background-color: var(--calculator-color);
+}
+.calculator__info {
+  position: absolute;
+
+  padding: 2px;
+
+  background-color: var(--calculator-color);
+  border-radius: var(--display-border-radius);
+
+  font-size: 0.4em;
 }
 
 .calculator__display {
